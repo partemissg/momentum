@@ -10,7 +10,9 @@ function onGeoOk(position) {
       const weather = document.querySelector("#weather #tmp");
       const city = document.querySelector("#weather #loc");
       city.innerText = data.name;
-      weather.innerText = `${data.weather[0].main} / ${data.main.temp}℃`;
+      weather.innerText = `${data.weather[0].main} / ${Math.round(
+        data.main.temp
+      )}℃`;
     });
 }
 function onGeoError() {
